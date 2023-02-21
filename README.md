@@ -40,4 +40,4 @@ On each entry’s page, any Markdown content in the entry file is converted to H
 
 ## Credits
 
-This project is part of the CS50 Web Programming with Python and JavaScript course, offered by Harvard University. The project specifications can be found [here](https://cs50.harvard.edu/web/2022/projects/1/wiki/).
+This project is part of the CS50 Web Programming with Python and JavaScript course, offered by Harvard University. The project specifications can be found [here](https://cs50.harvard.edu/web/2020/projects/1/wiki/).
