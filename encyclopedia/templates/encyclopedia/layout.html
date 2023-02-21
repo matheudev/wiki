@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="row">
+            <div class="sidebar col-lg-2 col-md-3">
+                <div style="margin-left: 15px; margin-right: 3px;">
+                    <div class="text-center">
+                        <a href="{% url 'index' %}"><img src="{% static 'encyclopedia/logo.png' %}" style="margin: auto; max-width: 300px; padding: 30px;"></a>
+                    </div>
+                    <form action="{% url 'search' %}" method="GET" style="margin-bottom: 15px;">
+                        <div style="display: flex;">
+                        <input class="search" type="text" name="q" placeholder="Search Encyclopedia" style="flex-grow: 1;">
+                        <button type="submit" style="flex-grow: 0; display: flex; border: 1px solid #000;">
+                            <img src="{% static 'encyclopedia/search.png' %}" alt="search" style="margin: auto; max-width: 20px; padding: 1px;">
+                        </button>
+                        </div>
+                    </form>               
+                    <div style="margin-bottom: 15px; font-size: 30px; font-weight: 600;">
+                        <a href="{% url 'index' %}">Home</a>
+                    </div>
+                    <div style="margin-bottom: 15px; font-size: 30px; font-weight: 600;">
+                        <a href="{% url 'create' %}">Create New Page</a>
+                    </div>
+                    <div style="margin-bottom: 15px; font-size: 30px; font-weight: 600;">
+                        <a href="{% url 'random_entry' %}">Random Page</a>
+                    </div>
+                </div>
+                {% block nav %}
+                {% endblock %}
+            </div>
+            <div class="main col-lg-10 col-md-9" style="padding-left: 30px;">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    <button class="btn btn-primary edit-button">
+        <a href="{% url 'edit' title=title %}" aria-label="Edit Entry">Edit</a>
+    </button>
+    {{ content|safe }}
+
+    <style>
+        .edit-button a {
+          color: white;
+          text-decoration: none;
+        }
+    </style>
+{% endblock %}
